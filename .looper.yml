@@ -1,0 +1,9 @@
+tools:
+    nuget: 4.1.0
+    maven: 3.6.1
+
+flows:
+  default:
+  - node(windows):
+    - 'CHCP 1252'
+    - mvn -B deploy:deploy-file -Dfile=./EdiHome.zip -DrepositoryId=pangaea_snapshots -Durl=https://repository.walmart.com/content/repositories/pangaea_snapshots/ -DgroupId=CoreJava-ASE -DartifactId=EdiHome-Azure -Dversion=${BUILD_NUMBER}.0.1-SNAPSHOT
